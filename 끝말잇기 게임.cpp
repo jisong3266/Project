@@ -44,11 +44,7 @@ int main(){
     }
     last = word[word.size()-1];
     word_box.push_back(word);
-    if(word_box.size() < 3){
-      cout << word_box[0] << "->" << word_box[1] << endl;;
-      }
-    else{
-      for(int i =0; i<word_box.size()-1;i++){
+    for(int i =0; i<word_box.size()-1;i++){
       cout << word_box[i] << "->";
       }
       cout << word_box[word_box.size()-1] << endl;
