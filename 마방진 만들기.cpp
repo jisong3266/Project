@@ -66,4 +66,8 @@ int main(){
       cout << endl;
   }
   }
+    for (int i = 0; i < n; i++){
+        delete[] magic_square[i];
+    }
+    delete[] magic_square;
 }
