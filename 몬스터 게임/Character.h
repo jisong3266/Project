@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include <cstring>
 #include <ctime>
 #include <fstream>
@@ -7,7 +8,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 class Character {
@@ -23,6 +23,12 @@ public:
     hp = 20;
     wpn.push_back("N/A");
   };
+  Character(string name, int a) {
+    this->name = name;
+    level = 0;
+    hp = rand() % 20 + 7;
+    wpn.push_back("N/A");
+  };
   virtual void Show_info() {
     cout << "NAME = " << name;
     cout << " LEVEL = " << level;
@@ -32,8 +38,8 @@ public:
       cout << wpn[i] << endl;
     }
   }
-  virtual void Level_up(){
+  virtual void Level_up() {
     level++;
-    hp *= 1.5;
+    hp += 10;
   }
 };
